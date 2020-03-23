@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp hình tròn</title>
+</head>
+<body>
+<script>
+    let Cir = function (radius) {
+        this.radius = radius;
+        this.getRadius = function () {
+            return radius;
+        };
+        this.getArea = function () {
+            return Math.PI*radius*radius;
+        };
+    };
+    let cir1 = new Cir(2);
+    let radius = cir1.getRadius();
+    let area = cir1.getArea();
+    alert("radius: "+radius+"; area: "+area);
+    let cir4 = new Cir(4);
+    let radius4 = cir4.getRadius();
+    let area4 = cir4.getArea();
+    alert("radius4: "+radius4+"; area4: "+area4);
+</script>
+</body>
+</html>

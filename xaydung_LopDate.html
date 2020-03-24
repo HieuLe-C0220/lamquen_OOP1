@@ -33,9 +33,6 @@
             this.month = month;
             this.year = year;
         };
-        this.toString = function () {
-            document.write(this.day+"/"+this.month+"/"+this.year)
-        }
     };
     let date = new MyDate(2,2,2007);
     let a = date.getDay();
@@ -43,7 +40,7 @@
     let c = date.getYear();
     alert(a+"/"+b+"/"+c);
     date.setDate(26,2,2020);
-    alert(date);
+    alert(date.getDay()+"/"+date.getMonth()+"/"+date.getYear());
 </script>
 </body>
 </html>

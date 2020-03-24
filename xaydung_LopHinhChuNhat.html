@@ -7,9 +7,7 @@
 <body>
 <canvas id="myCanvas" width="1368px" height="768px"></canvas>
 <script>
-    let Rectangel = function (x,y,length,width) {
-        this.x = x;
-        this.y = y;
+    let Rectangel = function (length,width) {
         this.length = length;
         this.width = width;
         this.getArea = function () {
@@ -18,30 +16,15 @@
         this.getPerimeter = function () {
             return (this.length+this.width)*2;
         };
+        this.drawRectangel = function () {
+            let ctx = document.getElementById('myCanvas').getContext("2d");
+            ctx.fillStyle="#d20bff";
+            ctx.fillRect(0,0,this.length,this.width);
+        }
     };
-    function getRandomHex() {
-        return Math.floor(Math.random()*255);
-    }
-    function getRandomColor() {
-        let red = getRandomHex();
-        let green = getRandomHex();
-        let blue = getRandomHex();
-        return "rgb(" + red + "," + blue + "," + green +")";
-    }
-    function creatRectangel() {
-        let ctx = document.getElementById('myCanvas').getContext("2d");
-        let color = getRandomColor();
-        let length = Math.floor(Math.random()*300);
-        let width = Math.floor(Math.random()*250);
-        let x = Math.random()*window.innerWidth;
-        let y = Math.random()*window.innerHeight;
-        let rectangel = new Rectangel(x,y,length,width);
-        ctx.beginPath();
-        ctx.rect(rectangel.x,rectangel.y,rectangel.length,rectangel.width);
-        ctx.fillStyle = color;
-        ctx.fillRect(x,y,length,width);
-    }
-    creatRectangel();
+    let hcn1 = new Rectangel(175,160);
+    hcn1.drawRectangel();
+    alert("Diện tích HCN là: "+hcn1.getArea()+"; Chu vi hình chữ nhật là: "+hcn1.getPerimeter());
 </script>
 </body>
 </html>

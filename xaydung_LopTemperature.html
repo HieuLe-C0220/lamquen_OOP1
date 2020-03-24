@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô tả nhiệt độ</title>
+</head>
+<body>
+<script>
+    let Temperature = function (x) {
+        this.celcius = x;
+        this.changetoFahrenheit = function () {
+            return this.celcius*1.8+32;
+        };
+        this.changetoKelvin = function () {
+            return this.celcius+273.15;
+        };
+        this.setCelcius = function (newX) {
+            this.celcius = newX;
+        }
+    };
+    let Celcius = new Temperature(25);
+    document.write("oF: "+Celcius.changetoFahrenheit()+"; oK: "+Celcius.changetoKelvin());
+    Celcius.setCelcius(12);
+    document.write("<br/>"+"oF: "+Celcius.changetoFahrenheit()+"; oK: "+Celcius.changetoKelvin());
+</script>
+</body>
+</html>
